@@ -1,0 +1,32 @@
+File Format Specification: .vis
+
+The .vis file format is designed to store performance metrics for computational tasks,
+typically used for visualizing execution times and intensities of various algorithms or computations.
+
+The first line of the file contains the title of the visualization plot.
+It typically describes the computation, algorithm, or task being analyzed (e.g., "Matrix Multiplications").
+
+Starting from the second line, data rows are organized in pairs:
+- First Line in Pair: Results for computations using Python 3.13 with the Global Interpreter Lock (GIL).
+- Second Line in Pair: Results for computations using Python 3.13 without the GIL.
+Each row contains exactly four space-separated values:
+- Field 1: Computational Intensity (integer) – A metric representing the size or intensity of the computation.
+- Field 2: Single-thread Execution Time (float) – Execution time in seconds for single-threaded computation.
+- Field 3: Multi-thread Execution Time (float) – Execution time in seconds for multi-threaded computation.
+- Field 4: Multi-process Execution Time (float) – Execution time in seconds for multi-process computation.
+
+Tools parsing .vis files should distinguish rows based on their order in pairs:
+Odd-numbered data rows (after the title line) correspond to Python 3.13 with GIL.
+Even-numbered data rows correspond to Python 3.13 without GIL.
+
+```EXAMPLE.vis
+Matrix Multiplications
+23887872 1.385127067565918 1.437911033630371 0.5234839916229248
+23887872 2.0390114784240723 0.6110594272613525 0.7885432243347168
+32768000 1.8887066841125488 1.9735448360443115 0.681065559387207
+32768000 2.8469431400299072 0.8741028308868408 1.0062816143035889
+43614208 2.469806671142578 2.5903000831604004 0.8540732860565186
+43614208 3.7291181087493896 1.1717228889465332 1.2536938190460205
+56623104 3.243942975997925 3.368190288543701 1.059870719909668
+56623104 4.834710121154785 1.5015490055084229 1.5809366703033447
+```
