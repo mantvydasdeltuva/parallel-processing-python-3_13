@@ -47,7 +47,7 @@ The document concludes by **emphasizing the significance of removing the GIL** i
 - `README.md`: This file, providing an overview of the project.
 - `Parallel-Processing-in-Python-3_13.pdf`: The complete document exploring parallel processing in Python 3.13.
 - `Parallel-Processing-in-Python-3_13-Presentation.pdf`: Presentation of this project.
-- `source_code`: Contains the Python scripts used for benchmarking and demonstrating parallel processing techniques.
+- `src`: Folder that contains the Python scripts used for benchmarking and demonstrating parallel processing techniques.
 
 ---
 
